@@ -1,0 +1,17 @@
+{
+  "name": "upblog",
+  "version": "1.0.0",
+  "description": "A blog app",
+  "main": "src/js/app.js",
+  "scripts": {
+    "compile:sass": "node-sass src/sass/main.scss src/css/style.css -w"
+  },
+  "author": "Adekola Thanni",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  },
+  "dependencies": {
+    "guardian-js": "^4.0.1"
+  }
+}

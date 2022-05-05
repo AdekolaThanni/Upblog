@@ -1,0 +1,35 @@
+.categories {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    margin-top: 5rem;
+    list-style: none;
+
+    &__category {
+        &:not(:last-child) {
+            margin-right: 2rem;
+
+            @media only screen and (max-width: $small) {
+                margin-right: .5rem;
+            }
+
+            &::after {
+                content: "\2022";
+                color: inherit;
+                font-weight: 600;
+                width: 1px;
+                margin-left: 1rem;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__active {
+        color: black;
+        font-weight: 600;
+    }
+}

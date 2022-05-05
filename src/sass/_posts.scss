@@ -1,0 +1,108 @@
+// Post stylings
+.posts {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, 50rem));
+    grid-gap: 2rem;
+
+    // First breakpoint
+    @media only screen and (max-width: $largest) {
+        grid-template-columns:  repeat(2, minmax(min-content, 40rem));
+        justify-content: center;
+    }
+    // Second breakpoint
+    @media only screen and (max-width: $small) {
+        grid-template-columns: minmax(min-content, 50rem);
+    }
+
+    &__post {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border: 1px solid $dark-gray;
+        border-radius: 3px;
+
+        &:not(:first-child){
+            grid-column: span 1;
+        }
+
+        // Earlier post styles 
+        &-thumbnail {
+            width: 100%;
+            height: 40rem;
+            object-fit: cover;
+        }
+
+
+        &-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem;
+
+            &--1 {
+                display: flex;
+                align-items: center;
+            }
+
+            &--2 {
+                height: 30rem;
+            }
+
+            &--3 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                justify-items: end;
+            }
+        }
+
+        &-niche {
+            color: $dark-ash;
+            font-weight: 600;
+        }
+
+        &-title {
+            color: $dark-ash;
+            margin: 1rem 0;
+
+            &:hover {
+                cursor: pointer;
+                color: $light-ash;
+            }
+        }
+        
+        &-content {
+            line-height: 1.5;
+        }
+
+        // Latest post styles
+        &-latest {
+            grid-column: 1 / -1;
+            flex-direction: row;
+
+            @media only screen and (max-width: $largest) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            & .posts__post-thumbnail {
+                width: 45%;
+
+                @media only screen and (max-width: $largest) {
+                    width: 100%;
+                }
+            }
+
+            & .posts__post-details {
+                margin-left: 2rem;
+
+                @media only screen and (max-width: $largest) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        
+    }
+}

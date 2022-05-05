@@ -1,0 +1,24 @@
+// Reset all default dimension settings
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Set a responsive font size
+html {
+    font-size: 62.5%;
+
+    @media only screen and (max-width: $medium) {
+        font-size: 50%;
+    }
+}
+
+body {
+    color: $light-ash;
+    font-size: 1.6rem;
+    font-family: $text-font;
+    font-weight: 200;
+    padding: 2rem;
+    position: relative;
+}
