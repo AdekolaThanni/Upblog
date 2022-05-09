@@ -1,4 +1,5 @@
 import View from "./view.js";
+import postsView from "./postsView.js";
 import {timeFormatter} from "../config.js";
 
 class ArticleView extends View {
@@ -37,13 +38,12 @@ class ArticleView extends View {
 
     // Handler function to show article when an event listener is triggered
     showArticleHandler(handler){
-        document.querySelector(".posts").addEventListener("click", function(event){
+        postsView._parentElement.addEventListener("click", function(event){
             const btn = event.target.closest(".btn__read");
             const link = event.target.closest(".posts__post-title");
             if (!btn && !link) return;
             const id = btn ? btn.closest(".posts__post").dataset.id : link.closest(".posts__post").dataset.id;
             handler(id);
-            console.log(id);
             this._toggleContainer();
         }.bind(this));
     }

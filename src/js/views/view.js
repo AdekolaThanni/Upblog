@@ -1,8 +1,8 @@
 class View {
+
     //Render data into parent element
-    render(data, pages = undefined){
+    render(data){
         this._data = data;
-        this._pages = pages;
         this._clear();
         const markup = this._generateMarkup();
         this._parentElement.insertAdjacentHTML("beforeend", markup);

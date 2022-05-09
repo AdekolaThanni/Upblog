@@ -3,7 +3,7 @@ const API_KEY =  "08be76e1-40ef-4c96-bb82-043dfdabb678";
 // Page size
 const PAGE_SIZE = 49;
 // URL
-const APP_URL = "https://content.guardianapis.com/search?";
+const APP_URL = "https://content.guardianapis.com/";
 
 // Network Time out
 const TIMEOUT = 30 // 15 SECONDS
@@ -33,13 +33,6 @@ const timeFormatter = function(date){
     return outputDate;
 };
 
-// Helper function to toggle unneeded element when no posts are available
-function toggle() {
-    document.querySelector(".spinner").classList.toggle("display");
-    document.querySelector(".pagination").classList.toggle("display");
-    document.querySelector(".footer").classList.toggle("display");
-};
-
 export {
     API_KEY,
     PAGE_SIZE,
@@ -47,6 +40,5 @@ export {
     TIMEOUT,
     INITIAL_SECTION,
     AVERAGE_WPM,
-    timeFormatter,
-    toggle
+    timeFormatter
 }

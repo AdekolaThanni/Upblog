@@ -1,30 +1,122 @@
-.categories {
-    height: 5rem;
+// .categories {
+//     height: 5rem;
+//     display: flex;
+//     align-items: center;
+//     padding: 1rem 0;
+//     margin-top: 5rem;
+//     list-style: none;
+
+//     &__category {
+//         &:not(:last-child) {
+//             margin-right: 2rem;
+
+//             @media only screen and (max-width: $small) {
+//                 margin-right: .5rem;
+//             }
+
+//             &::after {
+//                 content: "\2022";
+//                 color: inherit;
+//                 font-weight: 600;
+//                 width: 1px;
+//                 margin-left: 1rem;
+//             }
+//         }
+
+//         &:hover {
+//             cursor: pointer;
+//         }
+//     }
+
+//     &__active {
+//         color: black;
+//         font-weight: 600;
+//     }
+// }
+
+
+.navigation {
     display: flex;
-    align-items: center;
-    padding: 1rem 0;
-    margin-top: 5rem;
-    list-style: none;
+    margin: 3rem 0;
+}
 
-    &__category {
-        &:not(:last-child) {
-            margin-right: 2rem;
+.category {
+    overflow-y: visible;
+    height: 3.33rem;
+    z-index: 1;
 
-            @media only screen and (max-width: $small) {
-                margin-right: .5rem;
-            }
+    &__current {
+        border: 1px solid $dark-gray;
+        padding: .5rem 1rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 1s;
 
-            &::after {
-                content: "\2022";
-                color: inherit;
-                font-weight: 600;
-                width: 1px;
-                margin-left: 1rem;
-            }
+        & span {
+            color: black;
+            font-weight: 600;
+            font-size: 1.7rem;
+            margin-right: 1rem;
+        }
+
+        & svg {
+            width: 2rem;
+            height: 2rem;
+            margin-left: auto;
+            fill: $dark-gray;
+            transition: all 1s;
         }
 
         &:hover {
-            cursor: pointer;
+            & span {
+                color: $light-ash;
+            }
+            
+            & svg {
+                fill: black;
+            }
+        }
+    }
+
+    &__list {
+        border: 1px solid $dark-gray;
+        list-style: none;
+        height: 0;
+        overflow-y: scroll;
+        visibility: hidden;
+        transition: all .5s;
+        background-color: white;
+
+        &::-webkit-scrollbar {
+            width: .5rem;
+
+            &-track {
+                background-color: $dark-gray;
+            }
+
+            &-thumb {
+                background-color: $dark-ash;
+
+                &:hover {
+                    background-color: $light-ash;
+                }
+            }
+        }
+
+        &-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid $dark-gray;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $dark-gray;
+            }
+        }
+
+        &-link {
+            color: initial;
+            text-decoration: none;
         }
     }
 
@@ -32,4 +124,15 @@
         color: black;
         font-weight: 600;
     }
+}
+
+// Utilities
+.rotate-icon {
+    transform: rotate(-180deg);
+    fill: black !important;
+}
+
+.list-visibility {
+    visibility: visible;
+    height: 20rem;
 }

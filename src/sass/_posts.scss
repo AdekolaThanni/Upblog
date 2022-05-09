@@ -60,6 +60,11 @@
         &-niche {
             color: $dark-ash;
             font-weight: 600;
+
+            &:hover {
+                cursor: pointer;
+                color: $light-ash;
+            }
         }
 
         &-title {
