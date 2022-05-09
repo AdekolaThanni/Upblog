@@ -1,5 +1,4 @@
 class View {
-
     //Render data into parent element
     render(data){
         this._data = data;
